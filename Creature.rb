@@ -14,16 +14,6 @@ class Creature
     @position_y = rand(0..MAP[1])
   end
 
-  def in_map
-    if position_x > MAP[0] || position_x < 1
-      return false
-    elsif position_y > MAP[1] || position_y < 1
-      return false
-    else
-      return true
-    end
-  end
-
   def information
     puts "#{self.name}, que es un #{self.type}, está en la posición #{self.position_x},#{self.position_y}."
   end
