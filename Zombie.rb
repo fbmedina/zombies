@@ -17,9 +17,13 @@ class Zombie < Creature
     end
   end
 
+  def information
+    puts "El zombie " + super
+  end
+
 end
 
-zombie1 = Zombie.new("zombie")
+zombie1 = Zombie.new
 zombie1.information
 zombie1.walk
 zombie1.information

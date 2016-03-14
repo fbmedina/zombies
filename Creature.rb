@@ -7,15 +7,14 @@ class Creature
   attr_reader :name
   attr_accessor :position_x, :position_y, :type
 
-  def initialize(type)
-    @type = type
+  def initialize
     @name = @@names.sample
     @position_x = rand(0..MAP[0])
     @position_y = rand(0..MAP[1])
   end
 
   def information
-    puts "#{self.name}, que es un #{self.type}, está en la posición #{self.position_x},#{self.position_y}."
+    "#{self.name} está en la posición #{self.position_x},#{self.position_y}."
   end
 
 end
