@@ -9,8 +9,8 @@ class Creature
 
   def initialize
     @name = @@names.sample
-    @position_x = rand(0..MAP[0])
-    @position_y = rand(0..MAP[1])
+    @position_x = rand(1..MAP[0])
+    @position_y = rand(1..MAP[1])
   end
 
   def information
