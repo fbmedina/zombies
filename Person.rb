@@ -21,7 +21,7 @@ class Person < Creature
 
   def danger(zombie)
     close_to_zombie = false
-    
+
     if position_x.between(zombie.position_x - 3, zombie.position_x + 3)
       close_to_zombie = true
     end
@@ -33,6 +33,8 @@ class Person < Creature
   def scream(zombie)
     if close_to_zombie == true
       puts "¡Ayuda! ¡El zombie #{zombie.name} está cerca!"
+      self.information
+      zombie.information
     end
   end
 
