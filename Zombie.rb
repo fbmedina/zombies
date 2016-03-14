@@ -19,13 +19,8 @@ class Zombie < Creature
     puts "El zombie " + super
   end
 
-end
+  def talk 
+    puts "¡Brains!"
+  end
 
-zombie1 = Zombie.new
-zombie1.information
-zombie1.walk
-zombie1.information
-zombie1.walk
-zombie1.information
-zombie1.walk
-zombie1.information
+end
