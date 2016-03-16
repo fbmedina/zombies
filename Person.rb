@@ -19,35 +19,32 @@ class Person < Creature
     puts "La persona " + super
   end
 
-  def scream(zombie)
+  def danger(zombie)
     danger_scream = "¡Ayuda! ¡El zombie #{zombie.name} está cerca!"
+    close_to_zombie = false
+
+    if position_x.between(zombie.position_x - 3, zombie.position_x + 3)
+      close_to_zombie = true
+      puts danger_scream
+    end
+    if position_y.between(zombie.position_y - 3, zombie.position_y + 3)
+      close_to_zombie = true
+      puts danger_scream
+    end
+  end
+
+  def dying(zombie)
     dying_scream = "¡Ayuda! ¡El zombie #{zombie.name} me está comiendo!"
+    attack_by_zombie = false
 
-    def danger(zombie)
-      close_to_zombie = false
-
-      if position_x.between(zombie.position_x - 3, zombie.position_x + 3)
-        close_to_zombie = true
-        puts danger_scream
-      end
-      if position_y.between(zombie.position_y - 3, zombie.position_y + 3)
-        close_to_zombie = true
-        puts danger_scream
-      end
+    if position_x.between(zombie.position_x - 1, zombie.position_x + 1)
+      attack_by_zombie = true
+      puts dying_scream
     end
 
-    def dying
-      attack_by_zombie = false
-
-      if position_x.between(zombie.position_x - 1, zombie.position_x + 1)
-        attack_by_zombie = true
-        puts dying_scream
-      end
-
-      if position_y.between(zombie.position_y - 1, zombie.position_y + 1)
-        attack_by_zombie = true
-        puts dying_scream
-      end
+    if position_y.between(zombie.position_y - 1, zombie.position_y + 1)
+      attack_by_zombie = true
+      puts dying_scream
     end
   end
 
