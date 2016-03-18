@@ -28,6 +28,7 @@ while people.length > 0
       person.dying(zombie)
       if person.dying(zombie)
         people.delete(person)
+        zombies.push(person)
       end
     end
   end
