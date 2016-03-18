@@ -23,11 +23,11 @@ class Person < Creature
     danger_scream = "¡Ayuda! ¡El zombie #{zombie.name} está cerca!"
     close_to_zombie = false
 
-    if position_x.between(zombie.position_x - 3, zombie.position_x + 3)
+    if @position_x.between?(zombie.position_x - 3, zombie.position_x + 3)
       close_to_zombie = true
       puts danger_scream
     end
-    if position_y.between(zombie.position_y - 3, zombie.position_y + 3)
+    if @position_y.between?(zombie.position_y - 3, zombie.position_y + 3)
       close_to_zombie = true
       puts danger_scream
     end
@@ -37,12 +37,12 @@ class Person < Creature
     dying_scream = "¡Ayuda! ¡El zombie #{zombie.name} me está comiendo!"
     attack_by_zombie = false
 
-    if position_x.between(zombie.position_x - 1, zombie.position_x + 1)
+    if @position_x.between?(zombie.position_x - 1, zombie.position_x + 1)
       attack_by_zombie = true
       puts dying_scream
     end
 
-    if position_y.between(zombie.position_y - 1, zombie.position_y + 1)
+    if @position_y.between?(zombie.position_y - 1, zombie.position_y + 1)
       attack_by_zombie = true
       puts dying_scream
     end

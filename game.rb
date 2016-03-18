@@ -19,10 +19,17 @@ end
 pp people
 pp zombies
 
-people.each do |person|
-  person.run
-  zombies.each do |zombie|
-    zombie.walk
+while people.length > 0
+  people.each do |person|
+    person.run
+    zombies.each do |zombie|
+      zombie.walk
+      person.danger(zombie)
+      person.dying(zombie)
+      if person.dying(zombie)
+        people.delete(person)
+      end
+    end
   end
 end
 
