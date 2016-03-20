@@ -19,7 +19,6 @@ end
 pp people
 pp zombies
 
-while people.length > 0
   people.each do |person|
     person.run
     zombies.each do |zombie|
@@ -32,7 +31,6 @@ while people.length > 0
       end
     end
   end
-end
 
 pp people
 pp zombies
