@@ -28,8 +28,9 @@ while people.count > 0
       person.danger(zombie)
       person.dying(zombie)
       if person.dying(zombie)
+        puts "#{person.name} ha sido mordido por #{zombie.name} y se ha transformado en un zombie"
         people.delete(person)
-        zombies.push(person)
+        zombies.push(Zombie.new(person.name))
       end
     end
   end

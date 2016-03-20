@@ -7,7 +7,7 @@ class Creature
   attr_reader :name
   attr_accessor :position_x, :position_y, :type
 
-  def initialize
+  def initialize(name = nil)
     @name = @@names.sample
     @position_x = rand(1..MAP[0])
     @position_y = rand(1..MAP[1])
