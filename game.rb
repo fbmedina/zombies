@@ -19,22 +19,22 @@ end
 pp people
 pp zombies
 
-while people.count > 0
+
   people.each do |person|
     person.run
     person.information
     zombies.each do |zombie|
       zombie.walk
+      zombie.information
       person.danger(zombie)
       person.dying(zombie)
       if person.dying(zombie)
-        puts "#{person.name} ha sido mordido por #{zombie.name} y se ha transformado en un zombie"
         people.delete(person)
         zombies.push(Zombie.new(person.name))
       end
     end
   end
-end
+
 
 pp people
 pp zombies
