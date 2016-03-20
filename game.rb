@@ -19,8 +19,10 @@ end
 pp people
 pp zombies
 
+while people.count > 0
   people.each do |person|
     person.run
+    person.information
     zombies.each do |zombie|
       zombie.walk
       person.danger(zombie)
@@ -31,6 +33,7 @@ pp zombies
       end
     end
   end
+end
 
 pp people
 pp zombies
